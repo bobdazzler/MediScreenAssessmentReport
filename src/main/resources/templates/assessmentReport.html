@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MediScreen</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	
+	<div class="row"><h2>Patient Report</h2></div>
+	<div th:if="${message}" th:text="${message}"
+			th:class="${'alert ' + alertClass}"></div>
+	<div class="row">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Patient Id</th>
+					<th>Assessment Report</th>
+					<th>Sex</th>
+					<th>Age</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="patient : ${assessmentReport}">
+					<td style="width: 10%" th:text="${patient.patientId}"></td>
+					<td th:text="${patient.threatLevel}"></td>
+					<td th:text="${patient.sex}"></td>
+					<td th:text="${patient.age}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

@@ -18,6 +18,13 @@ public class AssessmentReportController {
 	public AssessmentReportController(AssessmentReportService assessmentReport) {
 		this.assessmentReport = assessmentReport;
 	}
+	/**
+	 * 
+	 * @param patientId
+	 * @param model
+	 * @param redirectAttributes
+	 * @return ModelView of patientAssessment Report
+	 */
 	@GetMapping("/assess/{id}")
 	public ModelAndView getAssesmentReportOfAPatient(@PathVariable("id") Integer patientId, Model model,RedirectAttributes redirectAttributes) {
 		PatientAssessmentReport assessMentReport = assessmentReport.reportAssessmentOfPateint(patientId);

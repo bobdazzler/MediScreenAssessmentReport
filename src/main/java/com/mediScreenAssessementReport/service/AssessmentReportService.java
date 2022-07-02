@@ -69,7 +69,7 @@ public class AssessmentReportService {
 		return age;
 	}
 	/**
-	 * 
+	 * get the sex of the a patient
 	 * @param patientId
 	 * @return sex
 	 */
@@ -78,7 +78,7 @@ public class AssessmentReportService {
 		return patient.getSex();
 	}
 	/**
-	 * 
+	 *  determines a patient diabetes risk level
 	 * @param patientId
 	 * @return PatientAssessmentReport
 	 */

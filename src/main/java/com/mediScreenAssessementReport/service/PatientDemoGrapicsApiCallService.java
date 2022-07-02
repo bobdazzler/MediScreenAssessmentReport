@@ -7,6 +7,10 @@ import com.mediScreenAssessementReport.model.Patient;
 import reactor.core.publisher.Flux;
 @Service
 public class PatientDemoGrapicsApiCallService {
+	/**
+	 * this service consumes "http://localhost:8081/patient/list" 
+	 * @return a list of patient in a UI format
+	 */
 	 public List<Patient> getAllPatients() {
 	        Flux<Patient> getPatientList= WebClient.create()
 	                .get()
@@ -16,6 +20,11 @@ public class PatientDemoGrapicsApiCallService {
 	        List<Patient> patientList = getPatientList.collectList().block();
 	        return patientList;
 }
+	 /**
+	  * this service consumes "http://localhost:8081/patient/info/{id}" by patientId
+	  * @param patientId
+	  * @return returns a patient object
+	  */
 	 public Patient getPatient(int patientId) {
 		 WebClient.Builder webClientBuilder = WebClient.builder();
 	        Patient JsonResponseFrom = webClientBuilder.build()
